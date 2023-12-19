@@ -1,0 +1,88 @@
+.calTable {
+  position: absolute;
+  top: 3%;
+  left: 10%;
+  width: 30%;
+  height: 50%;
+  border: 3px solid lightgrey;
+  font-weight: bold;
+}
+
+.calTable #prev {
+  float: left;
+}
+
+.calTable #next {
+  float: right;
+}
+
+.calTable caption {
+  padding: 20px;
+  height: 10%;
+  background-color: rgba(42, 168, 42, 1);
+}
+.calTable #title {
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.calTable #subtitle {
+  margin: 0;
+  color: white;
+  font-weight: bold;
+}
+
+/* th,
+td {
+  background-color: #eac696;
+  color: white;
+} */
+
+.calTable th {
+  text-align: center;
+  width: 20%;
+  padding: 20px;
+  border-bottom: 2.5px solid black;
+  font-weight: bold;
+  background-color: white;
+}
+.calTable td {
+  width: 40px;
+  height: 40px;
+  padding: 0 50px 50px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.calTable th:first-child {
+  border-bottom: 2.5px solid red;
+}
+.calTable th:last-child {
+  border-bottom: 2.5px solid rgba(42, 168, 42, 1);
+}
+
+.calTable td:hover {
+  background-color: rgb(243, 243, 243);
+}
+
+.calTable th:first-child,
+.calTable td:first-child {
+  color: red;
+}
+.calTable th:last-child,
+.calTable td:last-child {
+  color: rgba(42, 168, 42, 1);
+}
+
+.calTable button {
+  border: none;
+  background-color: rgba(42, 168, 42, 1);
+  color: white;
+}
+
+.calTable #today {
+  border: 3px solid rgba(42, 168, 42, 1);
+  border-radius: 50%;
+}

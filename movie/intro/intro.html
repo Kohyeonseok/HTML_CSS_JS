@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Numans&family=Prompt:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: "Numans", sans-serif;
+        font-family: "Prompt", sans-serif;
+      }
+
+      #side {
+        position: fixed;
+        width: 300px;
+        height: 100%;
+        background-color: #3c3fd8;
+        float: left;
+      }
+
+      #phoneImg {
+        display: inline-block;
+        width: 70px;
+      }
+      #instagramImg {
+        display: inline-block;
+        width: 40px;
+      }
+      #emailImg {
+        display: inline-block;
+        width: 65px;
+      }
+
+      #side p {
+        color: black;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #basic {
+        text-align: center;
+        margin-left: 5%;
+        margin-top: 20%;
+        color: white;
+      }
+
+      #myFace {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+      }
+
+      #center {
+        position: absolute;
+        background-color: #3c3fd8;
+        border: 2px solid #3c3fd8;
+        border-radius: 50%;
+        top: 320px;
+        left: 950px;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+
+        animation: slideDown 2s forwards;
+      }
+
+      #center span {
+        display: inline-block;
+        margin: 2px 0;
+        padding: 0 3px;
+        color: white;
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+
+      #center span:hover {
+        background-color: white;
+        color: #3c3fd8;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%); 
+        }
+        to {
+          transform: translateY(0); 
+        }
+      }
+
+      @keyframes slideRightToLeft {
+        from {
+          transform: translateX(100%); 
+        }
+        to {
+          transform: translateX(0); 
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(100%); 
+        }
+        to {
+          transform: translateY(0); 
+        }
+      }
+
+      @keyframes typing {
+        to {
+          width: 100%; 
+        }
+      }
+
+      #title{
+        position: fixed;
+        left : 20%;
+        font-size: 1.5em;
+        color : #3c3fd8;
+
+        white-space: nowrap; 
+        overflow: hidden;
+        width: 0;
+        animation: typing 3s steps(40, end) forwards; 
+      }
+
+      #informationList {
+        position: absolute;
+        left: 500px;
+        top: 50px;
+
+        width: 350px;
+        height: 350px;
+        background-color: white;
+        border: 3px solid rgba(60, 63, 216, 0.6);
+        border-radius: 20px;
+        box-shadow: 5px 5px 5px 7px #9b9b9b;
+
+        display: none;
+
+        animation: slideDown 1s forwards;
+      }
+
+      .detail {
+        margin: 25px 20px;
+        display: none;
+      }
+
+      #hobbyList {
+        position: absolute;
+        left: 1250px;
+        top: 50px;
+
+        width: 350px;
+        height: 350px;
+        background-color: white;
+        border: 3px solid rgba(60, 63, 216, 0.6);
+        border-radius: 20px;
+        box-shadow: -5px 5px 5px 7px #9b9b9b;
+
+        display: none;
+        animation: slideDown 1s forwards;
+      }
+      .hobbyObject{
+        margin:23px 50px;
+      }
+
+      #hobbyList img{
+        width:30px;
+        height:30px;
+      }
+
+      #hobbyList h3 {
+        display: inline;
+        text-align: center;
+        vertical-align: super;
+        margin: 50px 20px;
+        margin-bottom:30px;
+        font-size: 1.5em;
+      }
+
+      #hobbyList h3:hover {
+        background-color: #9b9b9b;
+        color: white;
+        opacity: 0.7;
+        cursor: pointer;
+      }
+
+      #historyList {
+        position: absolute;
+        left: 500px;
+        top: 500px;
+
+        width: 350px;
+        height: 350px;
+        background-color: white;
+        border: 3px solid rgba(60, 63, 216, 0.6);
+        border-radius: 20px;
+        box-shadow: 5px -5px 5px 7px #9b9b9b;
+
+        display: none;
+        animation: slideUp 0.5s forwards;
+      }
+
+      #historyList h3 {
+        margin: 25px 20px;
+
+        white-space: nowrap; 
+        overflow: hidden;
+        width: 0;
+        animation: typing 3s steps(40, end) forwards; 
+      }
+
+      #studyList {
+        position: absolute;
+        left: 1250px;
+        top: 500px;
+        background-color: white;
+        border: 3px solid rgba(60, 63, 216, 0.6);
+        width: 350px;
+        height: 350px;
+        padding-top:10px;
+        border-radius: 20px;
+        box-shadow: -5px -5px 5px 7px #9b9b9b;
+
+        display: none;
+
+        animation: slideRightToLeft 1s forwards;
+      }
+      #studyList div{
+        margin-left:20px;
+      }
+
+      #studyList img {
+        width: 30px;
+        height: 40px;
+        margin-left: 20px;
+        margin-top : 5px;
+      }
+
+      #studyList h3 {
+        display: inline;
+        margin-left: 20px;
+        font-size: 1.5em;
+        vertical-align: super;
+      }
+
+      #snsImg {
+        position: absolute;
+        left: 800px;
+        top: 100px;
+      }
+
+      #snsImg img {
+        width: 400px;
+        display: none;
+        border: 3px solid rgba(60, 63, 216, 0.6);
+        border-radius: 10px;
+      }
+
+      #musicList {
+        position: absolute;
+        left: 900px;
+        top: 20px;
+        padding: 0;
+        text-align: center;
+        display: none;
+      }
+
+      #checkList{
+        position: absolute;
+        width:340px;
+        height:600px;
+        left: 800px;
+        top: 100px;
+        background-color: white;
+        border: 3px solid rgba(60, 63, 216, 0.6);
+        border-radius: 10px;
+        padding-left :  60px;
+        display: none;
+      }
+
+      #checkList h3{
+        font-size:2.0em;
+      }
+
+      #checkList input{
+        margin : 20px 0;
+      }
+
+      #checkList span{
+        margin-left: 10px;
+        font-weight: bold;
+      }
+
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let side = document.querySelector("#side");
+        let basic = document.querySelector("#basic");
+        let main = document.querySelector("#main");
+
+        let cInfo = document.querySelector("#cInfo");
+        let cHobby = document.querySelector("#cHobby");
+        let cHistory = document.querySelector("#cHistory");
+        let cStudy = document.querySelector("#cStudy");
+
+        let informationList = document.querySelector("#informationList");
+        let detail = document.querySelectorAll(".detail");
+        let hobbyList = document.querySelector("#hobbyList");
+        let historyList = document.querySelector("#historyList");
+        let studyList = document.querySelector("#studyList");
+        let musicList = document.querySelector("#musicList");
+
+        let sns = document.querySelector("#sns");
+        let music = document.querySelector("#music");
+        let hiking = document.querySelector("#hiking");
+        let trip = document.querySelector("#trip");
+
+
+        let snsImg = document.querySelector("#snsImg img");
+        let historyItems = document.querySelectorAll("#historyList h3");
+       
+        let infoFlag = false;
+        let hobbyFlag = false;
+        let historyFlag = false;
+        let studyFlag = false;
+        let musicFlag = false;
+
+        let count = 0;
+
+        cInfo.addEventListener("click", () => {
+          if (!infoFlag) {
+            informationList.style.display = "block";
+            infoFlag = true;
+
+            const interval = setInterval(() => {
+              if (count < detail.length) {
+                detail[count].style.display = "block";
+                count++;
+              } else {
+                clearInterval(interval);
+              }
+            }, 500);
+          } else {
+            informationList.style.display = "";
+            infoFlag = false;
+          }
+        });
+
+        cHobby.addEventListener("click", () => {
+          if (!hobbyFlag) {
+            hobbyList.style.display = "block";
+            hobbyFlag = true;
+          } else {
+            hobbyList.style.display = "";
+            hobbyFlag = false;
+          }
+        });
+
+        cHistory.addEventListener("click", () => {
+          if (!historyFlag) {
+            historyList.style.display = "block";
+            historyFlag = true;
+
+            historyItems.forEach((item) => {
+              item.style.animation = "typing 3s steps(40, end) forwards";
+            });
+          } else {
+            historyList.style.display = "";
+            historyFlag = false;
+
+            historyItems.forEach((item) => {});
+          }
+        });
+
+        cStudy.addEventListener("click", () => {
+          if (!studyFlag) {
+            studyList.style.display = "block";
+            studyFlag = true;
+          } else {
+            studyList.style.display = "";
+            studyFlag = false;
+          }
+        });
+
+        sns.addEventListener("mouseover", () => {
+          snsImg.style.display = "block";
+        });
+        sns.addEventListener("mouseout", () => {
+          snsImg.style.display = "";
+        });
+
+        let hikingFlag=false;
+        let checkList = document.querySelector("#checkList");
+        let checkBtn = document.querySelectorAll(".checkBtn");
+        let checkItem = document.querySelectorAll(".checkItem");
+
+        hiking.addEventListener("click", () => {
+          if(!hikingFlag){
+            checkList.style.display="block";
+            hikingFlag=true;
+          }
+          else{
+            checkList.style.display="";
+            hikingFlag=false;
+          }
+        });
+
+        for(let i=0;i<checkBtn.length;i++){
+          checkBtn[i].addEventListener('click',()=>{
+            if(checkBtn[i].checked){
+              checkItem[i].style.textDecoration="line-through";
+            }
+            else{
+              checkItem[i].style.textDecoration="";
+            }
+          })
+        }
+
+        for(let i=0;i<checkBtn.length;i++){
+          checkBtn[i].addEventListener('mouseover',()=>{
+              checkItem[i].style.backgroundColor="#9b9b9b";
+              checkItem[i].style.color="white";
+              checkItem[i].style.opacity="0.8";
+              checkBtn[i].style.cursor="pointer";
+            })
+            checkBtn[i].addEventListener('mouseout',()=>{
+              checkItem[i].style.backgroundColor="white";
+              checkItem[i].style.color="black";
+              checkItem[i].style.opacity="1";
+          })
+        }
+
+        let audio = document.querySelector('audio');
+        music.addEventListener("click", () => {
+          if (!musicFlag) {
+            musicList.style.display = "block";
+            audio.play();
+            musicFlag = true;
+          } else {
+            musicList.style.display = "";
+            audio.pause();
+            musicFlag = false;
+          }
+        });
+
+        let camping = document.querySelector("#camping");
+        
+        camping.addEventListener("click",()=>{
+          open("https://m.thankqcamping.com/","");
+        });
+
+
+
+      });
+    </script>
+  </head>
+  <body>
+    <div id="title">
+      <h1>Hello Everyone !</h1>
+    </div>
+    <div id="side">
+      <div id="basic">
+        <img src="myFace.jpg" id="myFace" />
+        <h3>HYEON SEOK</h3>
+        <h3>- - - - - - - - - - - - - -</h3>
+        <p>CONTACT</p>
+        <img src="phoneImage.png" id="phoneImg" />
+        <p>010 5466 3418</p>
+        <img src="instagramImage.png" id="instagramImg" />
+        <p>@koesnuyh</p>
+        <img src="emailImage.png" id="emailImg" />
+        <p>kohunsuk@naver.com</p>
+      </div>
+    </div>
+
+    <div id="center">
+      <br/>
+      <span id="cInfo"> I N F O </span>
+      <span id="cHobby"> H O B B Y </span>
+      <span id="cHistory"> H I S T O R Y </span>
+      <span id="cStudy"> S T U D Y</span>
+    </div>
+
+    <div id="informationList">
+      <h3 class="detail">Name : Ko HyeonSeok</h3>
+      <h3 class="detail">Birth : 95.02.10</h3>
+      <h3 class="detail">Home : Siheung-si</h3>
+      <h3 class="detail">Height : 176cm</h3>
+      <h3 class="detail">Weight : Secret</h3>
+      <h3 class="detail">Major : Electric Engineering</h3>
+    </div>
+
+    <div id="hobbyList">
+      <div class="hobbyObject">
+        <img src="instagram.jpg"><h3 id="sns">SNS</h3>
+      </div>
+      <hr style="border: 1px solid rgba(60, 63, 216, 0.6)" />
+      <div class="hobbyObject">
+        <img src="youtubeMusic.png"><h3 id="music">Music</h3>
+      </div>
+      <hr style="border: 1px solid rgba(60, 63, 216, 0.6)" />
+      <div class="hobbyObject">
+        <img src="bac.png"><h3 id="hiking">Hiking</h3>
+      </div>
+      <hr style="border: 1px solid rgba(60, 63, 216, 0.6)" />
+      <div class="hobbyObject">
+        <img src="snowpeak.png"><h3 id="camping">Camping</h3>
+      </div>
+    </div>
+
+    <div id="historyList">
+      <h3>2001. 3 / Elementary School</h3>
+      <h3>2007. 3 / Middle School</h3>
+      <h3>2010. 3 / High School</h3>
+      <h3>2013. 3 / Suwon Science College</h3>
+      <h3>2014. 12 / R.O.K Army</h3>
+      <h3>ETC</h3>
+    </div>
+
+    <div id="studyList">
+      <div>
+        <img src="java.png" />
+        <h3>J A V A</h3>
+      </div>
+      <hr style="border: 1px solid rgba(60, 63, 216, 0.6)" />
+      <div>
+        <img src="mysql.png" />
+        <h3>M Y S Q L</h3>
+      </div>
+      <hr style="border: 1px solid rgba(60, 63, 216, 0.6)" />
+      <div>
+        <img src="html.jpg" />
+        <h3>H T M L</h3>
+      </div>
+      <hr style="border: 1px solid rgba(60, 63, 216, 0.6)" />
+      <div>
+        <img src="css.jpg" />
+        <h3>C S S</h3>
+      </div>
+      <hr style="border: 1px solid rgba(60, 63, 216, 0.6)" />
+      <div>
+        <img src="js.jpg" />
+        <h3>J A V A S C R I P T</h3>
+      </div>
+    </div>
+
+    <div id="snsImg">
+      <img src="myInstagram.jpg" />
+    </div>
+
+    <div id="musicList">
+      <audio src="postmalone-circle.mp3" controls></audio>
+    </div>
+
+    <div id="checkList">
+      <h3>Check List</h3>
+      <input type="checkbox" class="checkBtn"><span class="checkItem">Insulated Jacket</span><br>
+      <input type="checkbox" class="checkBtn"><span class="checkItem">HardShell Jacket</span><br>
+      <input type="checkbox" class="checkBtn"><span class="checkItem">Shoes & Socks</span><br>
+      <input type="checkbox" class="checkBtn"><span class="checkItem">Sticks</span><br>
+      <input type="checkbox" class="checkBtn"><span class="checkItem">Battery</span><br>
+      <input type="checkbox" class="checkBtn"><span class="checkItem">Head Lantern</span><br>
+      <input type="checkbox" class="checkBtn"><span class="checkItem">Water & Snack</span><br>
+    </div>
+  </body>
+</html>

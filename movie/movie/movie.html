@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin :0 auto;
+      }
+
+      #content-container {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+
+        background-image: url(ironmanMain.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+      }
+
+      @keyframes backgroundChange {
+        0% {
+          background-color: rgba(0, 0, 0, 0);
+          color: rgba(0, 0, 0, 0);
+        }
+        50% {
+          background-color: #99c5e2;
+          color: white;
+        }
+        100% {
+          background-color: rgba(0, 0, 0, 0);
+          color: rgba(0, 0, 0, 0);
+        }
+      }
+
+      #videoBtn,
+      #historyBtn,
+      #markSeriesBtn {
+        position: absolute;
+        background-color: none;
+        color: white;
+        opacity: 0.7;
+        animation: backgroundChange 2s infinite;
+      }
+
+      #videoBtn {
+        top: 27.5%;
+        left: 45.5%;
+
+        width: 45px;
+        height: 45px;
+
+        border-radius: 80px;
+        border: none;
+        background-size: cover;
+      }
+
+      #markSeriesBtn {
+        top: 26%;
+        left: 52.5%;
+
+        width: 45px;
+        height: 45px;
+
+        border-radius: 80px;
+        border: none;
+      }
+      #historyBtn {
+        top: 75.2%;
+        left: 44.5%;
+
+        width: 45px;
+        height: 45px;
+
+        border-radius: 80px;
+        border: none;
+        background-image: url(arcreactor4.gif);
+      }
+
+      #videoArea {
+        position: absolute;
+        display: none;
+        opacity: 0.9;
+        left: 60%;
+
+        animation-name: fade-in;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-delay: 0s;
+      }
+
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      video {
+        position: absolute;
+        width: 700px;
+      }
+
+      #ep {
+        position: absolute;
+        width: 400px;
+        height:800px;
+        top: 5%;
+        left: 68%;
+        display: none;
+
+        animation-name: fade-in;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-delay: 0s;
+      }
+
+      #ep img {
+        position: relative;
+        width: 140px;
+        height : 200px; 
+        margin: 0 20px;
+        opacity: 0.8;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      span {
+        color: white;
+        text-align: center;
+      }
+
+      #mark {
+        float: left;
+      }
+
+      #markList {
+        top: 1%;
+        left: 60%;
+        list-style: none;
+        position: absolute;
+        text-align: center;
+        display: none;
+
+        animation-name: fade-in;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-delay: 0s;
+        opacity: 0;
+      }
+
+      li {
+        color: rgb(255, 255, 255, 0.7);
+        padding: 10px;
+        margin: 30px 0;
+        font-weight: bold;
+        font-size: 1.5em;
+      }
+
+      li:hover {
+        border-radius: 70px;
+        background-color: rgb(255, 255, 255, 0.7);
+        color: black;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      #picture {
+        position: absolute;
+        left: 73%;
+        top: 10%;
+      }
+
+      .suit {
+        width: 400px;
+        height: 700px;
+        opacity: 0.7;
+      }
+
+      #iamironman {
+        color: white;
+        font-size: 100px;
+      }
+
+      #famousLine {
+        position: absolute;
+        color: white;
+      }
+
+      #famousLine h3 {
+        display: none;
+        margin: 35px;
+        font-size: 30px;
+        z-index: -1;
+      }
+
+      #famousLine > h3:nth-child(7) {
+        font-size: 80px;
+        color: rgb(255, 136, 0);
+      }
+
+      #famousLine > h3:nth-child(8) {
+        text-align: right;
+      }
+
+      #poster {
+        position: absolute;
+        display: inline-block;
+        width: 400px;
+        height: 700px;
+        left: 5%;
+        top: 5%;
+        margin: 0;
+        opacity: 1;
+      }
+
+      #poster img {
+        width: 600px;
+        height: 900px;
+        opacity: 0.6;
+
+        animation-name: fade-in;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-delay: 0s;
+      }
+
+      #iamironman {
+        margin-top: 0px;
+      }
+
+      audio {
+        position: absolute;
+        top: 88%;
+        left: 83%;
+        background: none;
+        color: white;
+        border: none;
+        padding: 10px;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+
+        let markSeries = document.querySelector("#markSeriesBtn");
+        let videoArea = document.querySelector("#videoArea");
+        let firstLine = document.querySelector("#firstLine");
+        let history = document.querySelector("#historyBtn");
+        let markList = document.querySelector("#markList");
+        let picture = document.querySelector("#picture");
+        let video = document.querySelector("#videoBtn");
+        let source = document.querySelector("source");
+        let list = document.querySelectorAll(".pic");
+        let ep = document.querySelector("#ep");
+        let flag = false;
+        let flag2 = false;
+        let flag3 = false;
+        let flag4 = false;
+
+        let h3 = document.querySelectorAll("h3");
+        let movieSiries = document.querySelectorAll(".movieSiries");
+        let poster = document.querySelector("#poster");
+        let count = 0;
+
+        let interval = setInterval(() => {
+          if (count < h3.length) {
+            h3[count].style.display = "block";
+            count++;
+          } else {
+            clearInterval(interval);
+          }
+        }, 1000);
+
+        video.addEventListener("click", () => {
+          if (!flag) {
+            videoArea.style.display = "block";
+            ep.style.display = "none";
+            markList.style.display = "none";
+            poster.style.display="none";
+            videoArea.classList.add("fade-in");
+            flag = true;
+          } else {
+            videoArea.style.display = "none";
+            document.querySelector("#ironmanMovie").currentTime = 0;
+            flag = false;
+          }
+        });
+
+        history.addEventListener("click", () => {
+          if (!flag3) {
+            ep.style.display = "block";
+            markList.style.display = "none";
+            videoArea.style.display = "none";
+            ep.classList.add("fade-in");
+            flag3 = true;
+          } else {
+            ep.style.display = "none";
+            poster.style.display = "none";
+            flag3 = false;
+          }
+        });
+
+        markSeries.addEventListener("click", () => {
+          if (!flag2) {
+            flag2 = true;
+            markList.style.display = "block";
+            ep.style.display = "none";
+            videoArea.style.display = "none";
+            poster.style.display="none";
+            markList.classList.add("fade-in");
+
+            for (let i = 0; i < list.length; i++) {
+              list[i].addEventListener("mouseover", (event) => {
+                picture.innerHTML = `<img src="mark${i + 1}.png" class="suit">`;
+              });
+              list[i].addEventListener("mouseout", (event) => {
+                picture.innerHTML = "";
+              });
+            }
+          } else {
+            flag2 = false;
+            source.src = "";
+            markList.style.display = "none";
+          }
+        });
+
+        for (let i = 0; i < movieSiries.length; i++) {
+          movieSiries[i].addEventListener("mouseover", () => {
+            movieSiries[i].style.opacity = "1";
+            movieSiries[i].style.width="160px";
+            movieSiries[i].style.height="220px";
+          });
+          movieSiries[i].addEventListener("mouseout", () => {
+            movieSiries[i].style.opacity = "0.6";
+            movieSiries[i].style.width="140px";
+            movieSiries[i].style.height="200px";
+          });
+        }
+
+        for (let i = 0; i < movieSiries.length; i++) {
+          movieSiries[i].addEventListener("click", () => {
+            poster.innerHTML = `<img src=${movieSiries[i].src} id="movies">`;
+            document.querySelector("#movies").classList.add("fade-in");
+            poster.style.display = "block";
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+
+    <div id="content-container">
+      <button id="videoBtn">click</button>
+      <button id="markSeriesBtn">click</button>
+      <button id="historyBtn">click</button>
+      <div id="ep">
+        <img class="movieSiries" src="ironman1.jpg" />
+        <img class="movieSiries" src="ironman2.jpg" />
+        <img class="movieSiries" src="avengers1.jpg" />
+        <img class="movieSiries" src="ironman3.jpg" />
+        <img class="movieSiries" src="avengers2.jpg" />
+        <img class="movieSiries" src="avengers3.jpg" />
+        <img class="movieSiries" src="spiderMan.jpg" />
+        <img class="movieSiries" src="avengers4.jpg" />
+      </div>
+      <ul id="markList">
+        <li class="pic">MARK 1</li>
+        <li class="pic">MARK 2</li>
+        <li class="pic">MARK 3</li>
+        <li class="pic">MARK 4</li>
+        <li class="pic">MARK 5</li>
+        <li class="pic">MARK 6</li>
+        <li class="pic">MARK 7</li>
+        <li class="pic">MARK 42</li>
+        <li class="pic">MARK 43</li>
+        <li class="pic">MARK 50</li>
+        <li class="pic">HULKBUSTER</li>
+      </ul>
+
+      <div id="firstLine">
+        <h1 id="iamironman">"I AM IRONMAN"</h1>
+      </div>
+      <div id="famousLine">
+        <h3>"Sometimes you gotta run before you walk."</h3>
+        <h3>"Cowards never start."</h3>
+        <h3>"The weak never finish and the winners never quit."</h3>
+        <h3>
+          "Heros are made by the paths they choose,<br />
+          not the powers they are graced with."
+        </h3>
+        <h3>"No hero is born. I will only be made."</h3>
+        <h3>"I love you three thousand."</h3>
+        <h3>"I AM IRONMAN."</h3>
+        <h3>PLAY MUSIC >></h3>
+      </div>
+      <div id="videoArea">
+        <video controls autoplay id="ironmanMovie">
+          <source src="ironmanVideo.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div id="poster"></div>
+      <audio controls>
+        <source src="mainThema.mp3" type="audio/mpeg" />
+      </audio>
+      <div id="picture"></div>
+    </div>
+  </body>
+</html>

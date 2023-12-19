@@ -1,0 +1,356 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+#container {
+  position: absolute;
+  left: 10%;
+  width: 90%;
+  height: 100vh;
+}
+
+header {
+  width: 90%;
+  position: fixed;
+  background-color: lightgray;
+  z-index: 999;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: black;
+}
+
+a:active {
+  color: white;
+}
+
+header h1 {
+  color: black;
+}
+
+#slidingShow {
+  position: relative;
+  top: 8%;
+  width: 100%;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.slider {
+  display: inline-block;
+  animation: slide 30s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#logo {
+  width: 2%;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+#loginImg {
+  width: 2%;
+  margin-left: 76%;
+}
+#loginImg:hover {
+  cursor: pointer;
+}
+
+#title {
+  display: inline;
+  text-align: center;
+}
+
+#mountainInfo,
+#liveNews,
+#review {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+
+#sideBar {
+  position: fixed;
+  background-color: gray;
+  width: 10%;
+  height: 100vh;
+  z-index: 999;
+}
+
+#background img {
+  width: 100%;
+  height: 99.5vh;
+}
+
+/*sideMenu.css*/
+#sideMenu {
+  position: relative;
+  top: 30%;
+  list-style: none;
+  font-weight: bold;
+}
+
+#sideMenu li {
+  margin: 15% 0;
+  padding: 0 5%;
+  text-align: right;
+  color: white;
+  transition: 0.5s;
+  border-radius: 10px 0 0 10px;
+}
+
+#sideMenu li:hover {
+  background-color: white;
+  color: gray;
+}
+
+/* end sideMenu.css*/
+
+/*End Main*/
+
+/*log modal*/
+#logModal {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+
+.modal-content {
+  position: relative;
+  left: 19%;
+  background-color: #fefefe;
+  margin: 5% 20%;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 20%;
+  height: 65%;
+}
+
+.closeBtn {
+  margin-left: 90%;
+  margin-bottom: 3%;
+  border: none;
+  background-color: white;
+}
+
+.closeBtn:hover {
+  cursor: pointer;
+}
+
+#logInfo,
+#joinInfo {
+  text-align: center;
+  align-items: center;
+}
+.modal-content div {
+  margin-bottom: 15%;
+}
+.modal-content input {
+  display: block;
+  margin-left: 28%;
+  margin-bottom: 5%;
+}
+#logBtn {
+  margin-bottom: 5%;
+}
+.modal-content a {
+  color: gray;
+}
+
+/*end log Modal*/
+
+/*about.css*/
+#aboutBackground {
+  width: 100%;
+  height: 60vh;
+}
+
+#aboutMessage {
+  position: relative;
+  left: 32%;
+  margin-top: 3%;
+  text-align: center;
+  display: inline-block;
+}
+/*end about.css*/
+
+/*review.css*/
+
+#review_title {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  /* border-bottom: 2px solid black; */
+  width: 85%;
+  padding-left: 5%;
+}
+
+#review_content {
+  position: absolute;
+  top: 21.5%;
+  left: 10%;
+  height: 74%;
+  width: 90%;
+  /* border: 1px solid black; */
+}
+
+.review_list {
+  float: left;
+  margin-top: 1%;
+  margin-left: 3%;
+  margin-right: 3%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 2px solid white;
+  padding: 1%;
+}
+.review_list img {
+  box-shadow: 3px 3px 20px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.review_list img:hover {
+  opacity: 1;
+}
+
+.review_list p {
+  font-size: 0.7em;
+  margin: 0;
+  padding: 2%;
+}
+
+#review_control {
+  position: absolute;
+  top: 85%;
+  left: 36%;
+  width: 40%;
+  height: 20%;
+  /* border: 1px solid black; */
+}
+
+#review_control button,
+input {
+  border: none;
+}
+
+#writeBtn {
+  margin-left: 15%;
+}
+#writeBtn,
+#delBtn {
+  margin-top: 1%;
+}
+
+/*end review.css*/
+
+/*footer.css*/
+#underBar {
+  position: fixed;
+  background-color: black;
+  width: 100%;
+  height: 5%;
+  top: 95%;
+  color: white;
+  text-align: center;
+  font-size: 0.7em;
+}
+/*end footer.css*/
+
+button {
+  cursor: pointer;
+}
+
+/*logPage.css*/
+#logPage {
+  position: absolute;
+  top: 20%;
+  left: 45%;
+  width: 20%;
+  height: 30%;
+  /* border: 1px solid black; */
+  text-align: center;
+  align-items: center;
+}
+
+#logPage input {
+  display: block;
+  margin-left: 28%;
+}
+#logPage button {
+  display: block;
+  margin-left: 45%;
+  margin-top: 3%;
+}
+
+/*addContent_modal*/
+#addContent_modal {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+
+.addContent_modal_header {
+  position: relative;
+  left: 10%;
+  background-color: #fefefe;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  height: 3%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.addContent_content {
+  position: relative;
+  left: 10%;
+  background-color: #fefefe;
+  margin: 0 20%;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  height: 70%;
+}
+
+#addContent_content_file {
+  display: block;
+  margin-bottom: 3%;
+}
+#addContent_content_text {
+  width: 100%;
+  height: 80%;
+}
+#addContent_content_submit {
+  display: block;
+  margin-top: 3%;
+}

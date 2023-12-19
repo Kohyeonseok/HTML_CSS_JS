@@ -1,0 +1,263 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+  background-color: beige;
+  font-family: "Roboto Slab", serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#container {
+  position: absolute;
+  width: 1080px;
+  height: 200vh;
+  top: 0;
+  left: 21.875%;
+  border: 2px solid rgba(128, 128, 128, 0.5);
+  align-items: center;
+  background-color: white;
+}
+
+header {
+  text-align: center;
+  align-items: center;
+}
+#topMenu {
+  position: relative;
+  left: 15%;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#topMenu img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  margin-top: 15px;
+}
+
+#topMenu h3 {
+  padding: 0 10px;
+}
+
+#topMenu h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(128, 128, 128, 0.7);
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.5s ease;
+}
+
+#topMenu h3:hover::after {
+  transform: scaleX(1);
+}
+
+#topMenu h3:hover {
+  background-color: rgba(128, 128, 128, 0.7);
+  color: white;
+  transition: 0.5s;
+}
+
+hr {
+  margin: 0;
+}
+
+#mainContentWrap {
+  height: 500px;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.5);
+}
+
+#mainContent {
+  position: relative;
+  top: 10px;
+  width: 50%;
+  left: 25%;
+  text-align: center;
+  background-color: white;
+  border: 2px solid rgba(128, 128, 128, 0.5);
+}
+
+#mainContent img {
+  width: 100%;
+}
+
+#midContent {
+  position: relative;
+  width: 100%;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.5);
+  display: flex;
+  justify-content: center;
+}
+
+#midContent h1 {
+  margin-right: 200px;
+}
+
+#midContent fieldset {
+  margin-top: 10px;
+  border: none;
+}
+
+#midContent legend {
+  font-size: 0.8em;
+  color: rgba(128, 128, 128, 0.7);
+}
+#midContent input {
+  border: none;
+}
+#midContent button {
+  border: none;
+  background-color: rgba(128, 128, 128, 0.5);
+  color: rgba(128, 128, 128, 1);
+  border-radius: 10px;
+}
+
+#subContentWrap {
+  position: relative;
+  width: 500px;
+}
+
+.subContent {
+  position: relative;
+  top: 50px;
+  width: 70%;
+  height: 200px;
+  left: 15%;
+  border: 2px solid rgba(128, 128, 128, 0.5);
+  margin: 20px 0;
+  display: flex;
+}
+
+.subContent img {
+  width: 180px;
+  height: 180px;
+  margin: 10px;
+}
+
+.subContent p {
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+}
+
+#rightContent {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 300px;
+  align-items: center;
+  border-left: 2px solid rgba(128, 128, 128, 0.5);
+}
+
+#myFace {
+  width: 200px;
+  height: 200px;
+}
+
+#info,
+#assistantInfo {
+  width: 100%;
+  margin-left: 40%;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.5);
+  padding: 20px 0;
+}
+
+#assistantInfo img {
+  width: 50px;
+  margin: 0 20px;
+}
+
+#contact {
+  width: 100%;
+  margin-left: 40%;
+  padding: 20px 0;
+}
+#contact img {
+  width: 30px;
+  height: 30px;
+  margin: 30px 20px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left:21.875%;
+  width: 1080px;
+  height: 50px;
+  border: 2px solid rgba(128, 128, 128, 0.5);
+  background-color: white;
+  text-align: center;
+  color: rgba(128, 128, 128, 0.7);
+}
+/* end main*/
+
+/* develop.css*/
+#developSection {
+  margin-top: 10px;
+}
+#develop_title {
+  border-top: 2px solid rgba(128, 128, 128, 0.7);
+  border-bottom: 2px solid rgba(128, 128, 128, 0.7);
+  text-align: center;
+}
+
+#develop_title h2 {
+  display: inline;
+}
+
+#develop_content {
+  position: relative;
+  margin: 20px;
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  width: 80%;
+  display: flex;
+  left: 10%;
+}
+
+#develop_content img {
+  margin: 10px;
+  width: 200px;
+  height: 100px;
+}
+
+/*end develop.css*/
+
+/* board.css*/
+#boardSection {
+  margin-top: 10px;
+}
+#board_title {
+  border-top: 2px solid rgba(128, 128, 128, 0.7);
+  border-bottom: 2px solid rgba(128, 128, 128, 0.7);
+  text-align: center;
+}
+
+#board_title h2 {
+  display: inline;
+}
+
+#board_content {
+  position: relative;
+  margin: 20px;
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  width: 80%;
+  display: flex;
+  left: 10%;
+}
+
+#board_content img {
+  margin: 10px;
+  width: 200px;
+  height: 100px;
+}

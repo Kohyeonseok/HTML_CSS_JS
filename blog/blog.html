@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogo</title>
+    <script src="jq/jquery.js"></script>
+    <link rel="stylesheet" href="css/blog.css" />
+    <!-- <link rel="stylesheet" href="css/cal.css"> -->
+    <link rel="icon" href="images/myFace.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Darker+Grotesque:wght@300;400;500&family=Mitr:wght@300&display=swap"
+        rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Darker+Grotesque:wght@300;400;500&family=Mitr:wght@300&family=Nanum+Gothic&family=Orbit&display=swap"
+        rel="stylesheet">
+
+    <script src="js/blog.js"></script>
+    <script src="js/cal.js"></script>
+</head>
+
+
+<body onload="showCal()">
+    <div id="container">
+        <header>
+            <div id="topMenu">
+                <p id="0">H O M E</p>
+                <p id="1">S C H E D U L E</p>
+                <p id="2">S T U D Y</p>
+                <p id="3">L I F E</p>
+                <p id="4">C O M M E N T</p>
+            </div>
+        </header>
+        <div id="content">
+            <div id="home">
+                <div id="information">
+                    <div id="profile">
+                        <h1>Welcome to Blogo</h1>
+                        <img src="images/myFace.jpg" id="myFace">
+                        <h2>HyeonSeok</h2>
+                        <br><br><br><br>
+                        <div id="stack">
+                            <img src="images/html.jpg">
+                            <img src="images/css.jpg">
+                            <img src="images/js.jpg">
+                            <img src="images/java.png">
+                            <img src="images/mysql.png">
+                            <img src="images/jsImg.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="schedule">
+                <div id="scheduleArea">
+                    <div id="scheduleBoard">
+                    </div>
+                    <div id="scheduler">
+                        <input type="text" placeholder="스케줄" id="scheduleInfo">
+                        <input type="text" placeholder="날짜" id="scheduleDate">
+                        <button id="addSchedule">추가</button>
+                        <button id="delSchedule">삭제</button>
+                        <table id="scheduleTable">
+                            <tr>
+                                <th>스케줄</th>
+                                <th>날짜</th>
+                                <th>비고</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="study">
+                <div id="studyArea">
+                    <div id="studyBoard">
+                        <div id="studyList">
+                            <h3>STACK</h3>
+                            <p>HTML</p>
+                            <p>CSS</p>
+                            <p>JavaScript</p>
+                            <p>Jquery</p>
+                            <p>Java</p>
+                            <p>MySQL</p>
+                        </div>
+                        <div class="mainBoard">
+                            <h2>HTML</h2>
+                            <hr>
+                            <div class="board">
+                                <div class="button">
+                                    <button class="write">작성</button>
+                                    <button class="delete">삭제</button>
+                                </div>
+                                <table class="table">
+                                    <tr>
+                                        <th>선택</th>
+                                        <th>제목</th>
+                                        <th>작성자</th>
+                                        <th>본문</th>
+                                </table>
+                                </tr>
+                            </div>
+                        </div>
+                        <div class="mainBoard">
+                            <h2>CSS</h2>
+                            <hr>
+                            <div class="board">
+                                <div class="button">
+                                    <button class="write">작성</button>
+                                    <button class="delete">삭제</button>
+                                </div>
+                                <table class="table">
+                                    <tr>
+                                        <th>선택</th>
+                                        <th>제목</th>
+                                        <th>작성자</th>
+                                        <th>본문</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="mainBoard">
+                            <h2>JavaScript</h2>
+                            <hr>
+                            <div class="board">
+                                <div class="button">
+                                    <button class="write">작성</button>
+                                    <button class="delete">삭제</button>
+                                </div>
+                                <table class="table">
+                                    <tr>
+                                        <th>선택</th>
+                                        <th>제목</th>
+                                        <th>작성자</th>
+                                        <th>본문</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="mainBoard">
+                            <h2>Jquery</h2>
+                            <hr>
+                            <div class="board">
+                                <div class="button">
+                                    <button class="write">작성</button>
+                                    <button class="delete">삭제</button>
+                                </div>
+                                <table class="table">
+                                    <tr>
+                                        <th>선택</th>
+                                        <th>제목</th>
+                                        <th>작성자</th>
+                                        <th>본문</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="mainBoard">
+                            <h2>Java</h2>
+                            <hr>
+                            <div class="board">
+                                <div class="button">
+                                    <button class="write">작성</button>
+                                    <button class="delete">삭제</button>
+                                </div>
+                                <table class="table">
+                                    <tr>
+                                        <th>선택</th>
+                                        <th>제목</th>
+                                        <th>작성자</th>
+                                        <th>본문</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="mainBoard">
+                            <h2>MySQL</h2>
+                            <hr>
+                            <div class="board">
+                                <div class="button">
+                                    <button class="write">작성</button>
+                                    <button class="delete">삭제</button>
+                                </div>
+                                <table class="table">
+                                    <tr>
+                                        <th>선택</th>
+                                        <th>제목</th>
+                                        <th>작성자</th>
+                                        <th>본문</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="life">
+                <div id="lifeArea">
+                    <div id="lifeBoard">
+                        <div id="lifeList">
+                            <h3>LIFE</h3>
+                            <p>FOOD</p>
+                            <p>HIKING</p>
+                            <p>REVIEW</p>
+                            <p>MUSIC</p>
+                        </div>
+                        <div class="mainBoard">
+                            <h2>FOOD</h2>
+                            <hr>
+                            <div class="board">
+                                <div class="button">
+                                    <button class="write">작성</button>
+                                    <button class="delete">삭제</button>
+                                </div>
+                                <table class="table">
+                                    <tr>
+                                        <th>선택</th>
+                                        <th>제목</th>
+                                        <th>작성자</th>
+                                        <th>본문</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="mainBoard">
+                            <h2>HIKING</h2>
+                            <hr>
+                            <div class="board">
+                                <div class="button">
+                                    <button class="write">작성</button>
+                                    <button class="delete">삭제</button>
+                                </div>
+                                <table class="table">
+                                    <tr>
+                                        <th>선택</th>
+                                        <th>제목</th>
+                                        <th>작성자</th>
+                                        <th>본문</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="mainBoard">
+                            <h2>REVIEW</h2>
+                            <hr>
+                            <div class="board">
+                                <div class="button">
+                                    <button class="write">작성</button>
+                                    <button class="delete">삭제</button>
+                                </div>
+                                <table class="table">
+                                    <tr>
+                                        <th>선택</th>
+                                        <th>제목</th>
+                                        <th>작성자</th>
+                                        <th>본문</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="mainBoard">
+                            <h2>MUSIC</h2>
+                            <hr>
+                            <div class="board">
+                                <div class="button">
+                                    <button class="write">작성</button>
+                                    <button class="delete">삭제</button>
+                                </div>
+                                <table class="table">
+                                    <tr>
+                                        <th>선택</th>
+                                        <th>제목</th>
+                                        <th>작성자</th>
+                                        <th>본문</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="comment">
+                <div id="commentArea">
+                    <div id="commentBoard">
+                        <h1>의견을 남겨주세요</h1>
+                        <div id="commentB">
+                            <table id="comTable">
+                                <tr>
+                                    <td>
+                                        <input type="text" placeholder="댓글입력" id="commentText">
+                                    </td>
+                                    <td>
+                                        <input type="text" placeholder="닉네임" id="commentName">
+                                    </td>
+                                    <td>
+                                        <button id="comBtn">등록</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div id="sns">
+                <img class="phone" src="images/phoneImage.png" />
+                <img class="instagram" src="images/instagramImage.png" />
+                <img class="email" src="images/emailImage.png" />
+                <img class="github" src="images/githubimage.png">
+            </div>
+            <h4>@Designed by HyeonSeok</h4>
+        </footer>
+        <p id="contacts"></p>
+    </div>
+
+
+    <div id="modal">
+        <div class="modal-content">
+            <button class="closeBtn">X</button>
+            <input type="text" placeholder="작성자를 입력하세요." id="writter">
+            <input type="text" placeholder="제목을 입력하세요." id="inputTitle">
+            <input type="file" placeholder="첨부할 파일을 선택하세요." id="file">
+            <textarea placeholder="내용을 입력하세요." id="inputContent"></textarea>
+            <button id="saveBtn">저장</button>
+        </div>
+    </div>
+
+    <div id="studyModal">
+        <div class="modal-content">
+            <button class="closeBtn">X</button>
+            <div id="showContent"></div>
+        </div>
+    </div>
+</body>
+
+</html>
