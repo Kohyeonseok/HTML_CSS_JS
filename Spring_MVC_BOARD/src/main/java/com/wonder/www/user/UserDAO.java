@@ -9,11 +9,9 @@ import org.springframework.stereotype.Repository;
 
 import com.wonder.www.common.JDBCUtil;
 
-// DAO(Data Access Object)
 @Repository("userDAO")
 public class UserDAO{
 	
-	// CRUD 기능의 메소드 구현
 	// 회원 등록
 	public UserVO getUser(UserVO vo) {
 		UserVO user = null;

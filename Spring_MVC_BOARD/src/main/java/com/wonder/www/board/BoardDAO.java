@@ -15,11 +15,9 @@ import org.springframework.stereotype.Repository;
 
 import com.wonder.www.common.*;
 
-// DAO(Data Access Object)
 @Repository("boardDAO")
 public class BoardDAO {
 	
-	// CRUD 기능의 메소드 구현
 	// 글 등록	
 	public void insertBoard(BoardVO vo) {
 		System.out.println("===> JDBC로 insertBoard() 기능 처리");
